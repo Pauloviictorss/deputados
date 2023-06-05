@@ -4,6 +4,7 @@ import React from 'react'
 import { Button, Card, Col, Form, InputGroup, Row, Table } from 'react-bootstrap'
 import apiDeputados from '../services/apiDeputados'
 import {FaSearch} from 'react-icons/fa';
+import { Breadcrumbs, Typography } from '@mui/material'
 
 const index = (props) => {
 
@@ -18,6 +19,12 @@ const index = (props) => {
     return (
         <HomeScreen>
             <div style={{ margin: '120px 0'}}>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Link underline="hover" color="inherit" href="/home">
+                        Home
+                    </Link>
+                    <Typography color="text.primary">Deputados</Typography>
+                </Breadcrumbs>
                 <InputGroup className="my-4">
                     <Form.Control
                     placeholder="Digite a sigla do partido desejado..."

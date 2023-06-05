@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import apiDeputados from '../services/apiDeputados'
+import { Breadcrumbs, Typography } from '@mui/material'
 
 const Detalhes = ({eventos, participantes}) => {
     console.log({eventos});
@@ -10,6 +11,19 @@ const Detalhes = ({eventos, participantes}) => {
     return (
         <HomeScreen>
             <div style={{ margin: "120px 0" }}>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Link underline="hover" color="inherit" href="/home">
+                        Home
+                    </Link>
+                    <Link
+                        underline="hover"
+                        color="inherit"
+                        href="/eventos"
+                    >
+                        Eventos
+                    </Link>
+                    <Typography color="text.primary">{eventos.descricaoTipo} - {eventos.situacao}</Typography>
+                </Breadcrumbs>
                 <h1>{eventos.descricaoTipo} - {eventos.situacao}</h1>
                 <Card className='bg-dark text-light' style={{ borderRadius: "10px" }}>
                     <h1 className='mx-3'>Descrição do evento</h1>
