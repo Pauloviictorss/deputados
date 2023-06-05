@@ -3,12 +3,26 @@ import Link from 'next/link'
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import apiDeputados from '../services/apiDeputados'
+import { Breadcrumbs, Typography } from '@mui/material'
 
 const Detalhes = ({proposicoes, relacionadas}) => {
 
     return (
         <HomeScreen>
             <div style={{ margin: "120px 0" }}>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Link underline="hover" color="inherit" href="/home">
+                        Home
+                    </Link>
+                    <Link
+                        underline="hover"
+                        color="inherit"
+                        href="/proposicoes"
+                    >
+                        Proposições
+                    </Link>
+                    <Typography color="text.primary">{proposicoes.siglaTipo} {proposicoes.numero}, ano {proposicoes.ano}</Typography>
+                </Breadcrumbs>
                 <h1 className='mx-3'>{proposicoes.siglaTipo} {proposicoes.numero}, ano {proposicoes.ano}</h1>
                 <Card className='bg-dark text-light' style={{ borderRadius: "10px" }}>
                     <h3 className='mx-3'>Descrição da proposição</h3>

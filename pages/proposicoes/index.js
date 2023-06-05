@@ -3,12 +3,19 @@ import Link from 'next/link'
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import apiDeputados from '../services/apiDeputados'
+import { Breadcrumbs, Typography } from '@mui/material'
 
 const index = (props) => {
 
     return (
         <HomeScreen>
             <div style={{ margin: "120px 0" }}>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Link underline="hover" color="inherit" href="/home">
+                        Home
+                    </Link>
+                    <Typography color="text.primary">Proposições</Typography>
+                </Breadcrumbs>
                 <Card className='align-items-center p-2 mb-2'>
                     <h1>Proposições na Câmara</h1>
                 </Card>

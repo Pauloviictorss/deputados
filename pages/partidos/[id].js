@@ -3,12 +3,26 @@ import Link from 'next/link'
 import React from 'react'
 import { Card, Col, Row, Table } from 'react-bootstrap'
 import apiDeputados from '../services/apiDeputados'
+import { Breadcrumbs, Typography } from '@mui/material'
 
 const Detalhes = ({partidos, deputadosPartido}) => {
 
     return (
         <HomeScreen>
             <div style={{ margin: "120px 0" }}>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Link underline="hover" color="inherit" href="/home">
+                        Home
+                    </Link>
+                    <Link
+                        underline="hover"
+                        color="inherit"
+                        href="/partidos"
+                    >
+                        Partidos
+                    </Link>
+                    <Typography color="text.primary">{partidos.sigla} - {partidos.nome}</Typography>
+                </Breadcrumbs>
                 <h1 className='mx-3'>{partidos.sigla} - {partidos.nome}</h1>
 
                 <h2 className='mx-3'>Detalhes do partido:</h2>
